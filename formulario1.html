@@ -1,34 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="style2.css">
+    <title>Cadastro</title>
+    <style>
+        body{
+            background-color: rgb(46, 49, 49);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Formulário de Contato</h1>
-    <form action="/submit_form" method="post">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+    <div class="container">
+
+
+        <div class="componente">
+
+            <form action="cadastro.php" method="post">
+
+                <div class="form-group">
+                    <label for="tipo-pessoa">Tipo pessoa:</label>
+                    <select id="tipo-pessoa" name="tipo-pessoa" class="form-control">
+                        <option value="juridica">Jurídica</option>
+                        <option value="fisica">Física</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="razao-social">Razão social:</label>
+                    <input type="text" id="razao-social" name="razao-social" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nome-fantasia">Nome fantasia:</label>
+                    <input type="text" id="nome-fantasia" name="nome-fantasia" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" class="form-control">
+
+                    <label for="uf">  UF:</label>
+                    <input type="text" id="uf" name="uf" size="7" class="form-control-inline">  
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" class="form-control">
+                     
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero" size="7"  class="form-control">
+                </div>
+
+            
         </div>
-        <div>
-            <label for="setor">Setor:</label>
-            <input type="text" id="setor" name="setor" required>
+
+
+
+        <div class="componente2">
+            <div class="check">
+                <div>
+                    <label>
+                        <input type="checkbox" name="cliente"> 
+                        <span></span> Cliente
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="fornecedor"> 
+                        <span></span> Fornecedor
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="representante"> 
+                        <span></span> Representante
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="transportadora"> 
+                        <span></span> Transportadora
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="prestador-servico"> 
+                        <span></span> Prestador de serviço
+                    </label>
+                </div>
+            </div>
+            
+
         </div>
-        <div>
-            <label for="funcao">Função:</label>
-            <input type="text" id="funcao" name="funcao" required>
+
+
+        <div class="componente3">
+            <div class="form-group">
+                <button type="submit" class="save">Gravar</button>
+                <button type="button" class="cancel">Cancelar</button>
+            </div>
+        </form>
+
         </div>
-        <div>
-            <label for="contato">Contato:</label>
-            <input type="text" id="contato" name="contato" required>
-        </div>
-        <div>
-            <button type="submit">Enviar</button>
-        </div>
-    </form>
-    <a href="menu.html"><button>Voltar</button></a>
+    </div>
+
+
+
 </body>
+
 </html>
