@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção de Pessoas</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Manutenção de pessoas</h2>
+
+        </div>
+        <div class="filter-section">
+            <label for="tipoPessoa">Tipo:</label>
+            <select id="tipoPessoa">
+                <option value="cliente">Cliente</option>
+                <option value="fornrcedor">Fornecedor</option>
+                <option value="representante">Representante</option>
+                <option value="transportadora">Transportadora</option>
+                <option value="prestador de servico">Prestador de serviços</option>
+                <option value="todos">Todos</option>
+            </select>
+
+            <label for="situacao">Situação:</label>
+            <select id="situacao">
+                <option value="ativo">Ativo(s)</option>
+                <option value="inativo">Inativo(s)</option>
+                <option value="bloqueado">Bloqueado(s)</option>
+            </select>
+            <label for="estados">Estados:</label>
+            <select name="estados" id="estados-brasil">
+                <option value="AC">Acre (AC)</option>
+                <option value="AL">Alagoas (AL)</option>
+                <option value="AP">Amapá (AP)</option>
+                <option value="AM">Amazonas (AM)</option>
+                <option value="BA">Bahia (BA)</option>
+                <option value="CE">Ceará (CE)</option>
+                <option value="DF">Distrito Federal (DF)</option>
+                <option value="ES">Espírito Santo (ES)</option>
+                <option value="GO">Goiás (GO)</option>
+                <option value="MA">Maranhão (MA)</option>
+                <option value="MT">Mato Grosso (MT)</option>
+                <option value="MS">Mato Grosso do Sul (MS)</option>
+                <option value="MG">Minas Gerais (MG)</option>
+                <option value="PA">Pará (PA)</option>
+                <option value="PB">Paraíba (PB)</option>
+                <option value="PR">Paraná (PR)</option>
+                <option value="PE">Pernambuco (PE)</option>
+                <option value="PI">Piauí (PI)</option>
+                <option value="RJ">Rio de Janeiro (RJ)</option>
+                <option value="RN">Rio Grande do Norte (RN)</option>
+                <option value="RS">Rio Grande do Sul (RS)</option>
+                <option value="RO">Rondônia (RO)</option>
+                <option value="RR">Roraima (RR)</option>
+                <option value="SC">Santa Catarina (SC)</option>
+                <option value="SP">São Paulo (SP)</option>
+                <option value="SE">Sergipe (SE)</option>
+                <option value="TO">Tocantins (TO)</option>
+            </select>            
+
+            <label for="cidades">Cidades:</label>
+            <input type="text" id="cidades" placeholder="Cidades" size="7">
+
+            <button id="filtrar">Filtrar</button>
+        </div>
+        <div class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Pessoa</th>
+                        <th>Nome fantasia</th>
+                        <th>Cidade/UF</th>
+                        <th>CPF/CNPJ</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody id="resultados">
+                    <!-- Linhas iniciais em branco -->
+                    <tr><td colspan="6">&nbsp;</td></tr>
+                    <tr><td colspan="6">&nbsp;</td></tr>
+                    <tr><td colspan="6">&nbsp;</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="action-buttons">
+            <button id="incluir">Incluir</button>
+            <button>Editar</button>
+            <button>Excluir</button>
+            <button>Consultar</button>
+            <button>Inativar</button>
+            <button>Bloquear</button>
+            <button>Listar</button>
+        </div>
+        <div class="footer">
+            <p>"Faça o teu melhor, na condição que você tem, enquanto você não tem condições melhores para fazer melhor ainda."</p>
+        </div>
+    </div>
+    
+    <script src="funcoes.js"></script>
+</body>
+</html>
