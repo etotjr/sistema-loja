@@ -21,7 +21,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "meu_banco_de_dados";
+        $dbname = "lojajr";
 
         // Criar conexão
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -45,26 +45,29 @@
 
         // Validar e processar dados do formulário
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ( empty($_POST["tipo-pessoa"]) || empty($_POST["nome"]) || empty($_POST["cnpj"]) ||
+            if ( empty($_POST["tipo"]) || empty($_POST["nome"]) || empty($_POST["cpf"]) ||
                 empty($_POST["telefone"]) || empty($_POST["email"]) || empty($_POST["uf"]) ||
-                empty($_POST["cidade"]) || empty($_POST["endereco"]) || empty($_POST["numero"])) {
+                empty($_POST["cidade"]) || empty($_POST["endereco"]) || empty($_POST["numero"]) || 
+                empty($_POST["data"]) || empty($_POST["cep"])) {
                 $error = "Todos os campos são obrigatórios.";
             } else {
-                $tipoPessoa = test_input($_POST["tipo-pessoa"]);
-                $nomeFantasia = test_input($_POST["nome"]);
-                $cnpj = test_input($_POST["cnpj"]);
+                $tipoPessoa = test_input($_POST["tipo"]);
+                $nome = test_input($_POST["nome"]);
+                $cpf = test_input($_POST["cpf"]);
                 $telefone = test_input($_POST["telefone"]);
                 $email = test_input($_POST["email"]);
                 $uf = test_input($_POST["uf"]);
                 $cidade = test_input($_POST["cidade"]);
                 $endereco = test_input($_POST["endereco"]);
                 $numero = test_input($_POST["numero"]);
+                $data = test_input($_POST["data"]);
+                $cep = test_input($_POST["cep"]);
             }//retirar esse fechamento quando for utilizar o inserir dados
         }
     /*
                 // Inserir dados no banco de dados
-                $sql = "INSERT INTO cadastro_empresas (razao_social, nome_fantasia, cnpj, telefone, email, uf, cidade, endereco, numero)
-                        VALUES ('$razaoSocial', '$nomeFantasia', '$cnpj', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$numero')";
+                $sql = "INSERT INTO pessoas (nome, cpf, telefone, email, uf, cidade, endereco, tipo, data_cadastro, cep)
+                        VALUES ('$nome', '$cpf', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$tipoPessoa', '$data', '$cep')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "<div class='data'>Cadastro realizado com sucesso!</div>";
@@ -80,16 +83,18 @@
         <?php if (!empty($error)): ?>
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
-        
+     <div>   
         <div class="data"><strong>Pessoa:</strong> <?php echo $tipoPessoa; ?></div>
-        <div class="data"><strong>Nome:</strong> <?php echo $nomeFantasia; ?></div>
-        <div class="data"><strong>CNPJ:</strong> <?php echo $cnpj; ?></div>
+        <div class="data"><strong>Nome:</strong> <?php echo $nome; ?></div>
+        <div class="data"><strong>CPF/CNPJ:</strong> <?php echo $cpf; ?></div>
         <div class="data"><strong>Telefone:</strong> <?php echo $telefone; ?></div>
         <div class="data"><strong>Email:</strong> <?php echo $email; ?></div>
         <div class="data"><strong>UF:</strong> <?php echo $uf; ?></div>
         <div class="data"><strong>Cidade:</strong> <?php echo $cidade; ?></div>
         <div class="data"><strong>Endereço:</strong> <?php echo $endereco; ?></div>
         <div class="data"><strong>Número:</strong> <?php echo $numero; ?></div>
+        <div class="data"><strong>Data:</strong> <?php echo $data; ?></div>
+        <div class="data"><strong>CEP:</strong> <?php echo $cep; ?></div>
     </div>
 
 
