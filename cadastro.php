@@ -45,14 +45,13 @@
 
         // Validar e processar dados do formulário
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ( empty($_POST["tipo-pessoa"]) || empty($_POST["razao-social"]) || empty($_POST["nome-fantasia"]) || empty($_POST["cnpj"]) ||
+            if ( empty($_POST["tipo-pessoa"]) || empty($_POST["nome"]) || empty($_POST["cnpj"]) ||
                 empty($_POST["telefone"]) || empty($_POST["email"]) || empty($_POST["uf"]) ||
                 empty($_POST["cidade"]) || empty($_POST["endereco"]) || empty($_POST["numero"])) {
                 $error = "Todos os campos são obrigatórios.";
             } else {
                 $tipoPessoa = test_input($_POST["tipo-pessoa"]);
-                $razaoSocial = test_input($_POST["razao-social"]);
-                $nomeFantasia = test_input($_POST["nome-fantasia"]);
+                $nomeFantasia = test_input($_POST["nome"]);
                 $cnpj = test_input($_POST["cnpj"]);
                 $telefone = test_input($_POST["telefone"]);
                 $email = test_input($_POST["email"]);
@@ -83,8 +82,7 @@
         <?php endif; ?>
         
         <div class="data"><strong>Pessoa:</strong> <?php echo $tipoPessoa; ?></div>
-        <div class="data"><strong>Razão Social:</strong> <?php echo $razaoSocial; ?></div>
-        <div class="data"><strong>Nome Fantasia:</strong> <?php echo $nomeFantasia; ?></div>
+        <div class="data"><strong>Nome:</strong> <?php echo $nomeFantasia; ?></div>
         <div class="data"><strong>CNPJ:</strong> <?php echo $cnpj; ?></div>
         <div class="data"><strong>Telefone:</strong> <?php echo $telefone; ?></div>
         <div class="data"><strong>Email:</strong> <?php echo $email; ?></div>
