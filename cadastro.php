@@ -16,7 +16,7 @@
     <div class="container">
         <h1>Cadastro PHP</h1>
         <?php
-    /*
+    
         // Estabelecer conexão com o banco de dados
         $servername = "localhost";
         $username = "root";
@@ -30,7 +30,7 @@
         if ($conn->connect_error) {
             die("<div class='error'>Falha na conexão: " . $conn->connect_error . "</div>");
         }
-    */
+    
         // Função para validar e sanitizar dados
         function test_input($data) {
             $data = trim($data);
@@ -64,20 +64,20 @@
                 $cep = test_input($_POST["cep"]);
             }//retirar esse fechamento quando for utilizar o inserir dados
         }
-    /*
+    
                 // Inserir dados no banco de dados
-                $sql = "INSERT INTO pessoas (nome, cpf, telefone, email, uf, cidade, endereco, tipo, data_cadastro, cep)
-                        VALUES ('$nome', '$cpf', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$tipoPessoa', '$data', '$cep')";
+                $sql = "INSERT INTO pessoas (nome, cpf, telefone, email, uf, cidade, endereco, numero, tipo, data_cadastro, cep)
+                        VALUES ('$nome', '$cpf', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$numero', '$tipoPessoa', '$data', '$cep')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "<div class='data'>Cadastro realizado com sucesso!</div>";
                 } else {
                     echo "<div class='error'>Erro: " . $sql . "<br>" . $conn->error . "</div>";
                 }
-            }
-        }
+            
+        
 
-        $conn->close();*/
+        $conn->close();
         ?>
 
         <?php if (!empty($error)): ?>
