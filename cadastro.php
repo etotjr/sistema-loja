@@ -48,7 +48,7 @@
             if ( empty($_POST["tipo"]) || empty($_POST["nome"]) || empty($_POST["cpf"]) ||
                 empty($_POST["telefone"]) || empty($_POST["email"]) || empty($_POST["uf"]) ||
                 empty($_POST["cidade"]) || empty($_POST["endereco"]) || empty($_POST["numero"]) || 
-                empty($_POST["data"]) || empty($_POST["cep"])) {
+                /*empty($_POST["data"]) || */empty($_POST["cep"])) {
                 $error = "Todos os campos são obrigatórios.";
             } else {
                 $tipoPessoa = test_input($_POST["tipo"]);
@@ -60,14 +60,14 @@
                 $cidade = test_input($_POST["cidade"]);
                 $endereco = test_input($_POST["endereco"]);
                 $numero = test_input($_POST["numero"]);
-                $data = test_input($_POST["data"]);
+                //$data = test_input($_POST["data"]);
                 $cep = test_input($_POST["cep"]);
             }//retirar esse fechamento quando for utilizar o inserir dados
         }
     
                 // Inserir dados no banco de dados
-                $sql = "INSERT INTO pessoas (nome, cpf, telefone, email, uf, cidade, endereco, numero, tipo, data_cadastro, cep)
-                        VALUES ('$nome', '$cpf', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$numero', '$tipoPessoa', '$data', '$cep')";
+                $sql = "INSERT INTO pessoas (nome, cpf, telefone, email, uf, cidade, endereco, numero, tipo, cep)
+                        VALUES ('$nome', '$cpf', '$telefone', '$email', '$uf', '$cidade', '$endereco', '$numero', '$tipoPessoa', '$cep')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "<div class='data'>Cadastro realizado com sucesso!</div>";
@@ -93,7 +93,6 @@
         <div class="data"><strong>Cidade:</strong> <?php echo $cidade; ?></div>
         <div class="data"><strong>Endereço:</strong> <?php echo $endereco; ?></div>
         <div class="data"><strong>Número:</strong> <?php echo $numero; ?></div>
-        <div class="data"><strong>Data:</strong> <?php echo $data; ?></div>
         <div class="data"><strong>CEP:</strong> <?php echo $cep; ?></div>
     </div>
 
