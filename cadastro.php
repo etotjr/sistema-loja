@@ -45,7 +45,7 @@
 
         // Validar e processar dados do formulário
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ( empty($_POST["tipo"]) || empty($_POST["nome"]) || empty($_POST["cpf"]) ||
+            if ( empty($_POST["tipo"]) || empty($_POST["nome"]) || empty($_POST["documento"]) ||
                 empty($_POST["telefone"]) || empty($_POST["email"]) || empty($_POST["uf"]) ||
                 empty($_POST["cidade"]) || empty($_POST["endereco"]) || empty($_POST["numero"]) || 
                 /*empty($_POST["data"]) || */empty($_POST["cep"])) {
@@ -53,7 +53,7 @@
             } else {
                 $tipoPessoa = test_input($_POST["tipo"]);
                 $nome = test_input($_POST["nome"]);
-                $cpf = test_input($_POST["cpf"]);
+                $cpf = test_input($_POST["documento"]);
                 $telefone = test_input($_POST["telefone"]);
                 $email = test_input($_POST["email"]);
                 $uf = test_input($_POST["uf"]);
