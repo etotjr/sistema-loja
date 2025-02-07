@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
     <title>Cadastro</title>
+
+<script>
+    function limparCampos() {
+        var campos = document.querySelectorAll('form input[type="text"], form input[type="email"], form input[type="tel"]');
+
+        campos.forEach(function(campo){
+            campo.value = "";
+        });
+    }
+</script>
+
     <style>
         body {
             background-color: rgb(46, 49, 49);
@@ -126,7 +137,8 @@
                 <div class="componente3">
                     <div class="form-group">
                         <button type="submit" class="save">Gravar</button>
-                        <button type="button" class="cancel">Cancelar</button>
+                
+                        <button type="button" class="cancel" onclick="limparCampos()">Limpar</button>
                     </div>
                 </div>
             </form>
